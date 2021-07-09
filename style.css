@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: #eee;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+/* the button */
+@keyframes btn {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 16px 32px;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  background-color: orange;
+  box-shadow: 0 0 1px orange;
+  position: relative;
+  font-weight: 500;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  border: 6px solid orange;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  animation-duration: 0.7s;
+}
+
+.btn:hover::before,
+.btn:focus::before,
+.btn:active::before {
+  animation-name: btn;
+}
+
+.main-container {
+  position: relative;
+}
+
+.main-header {
+  position: fixed;
+  background-color: #eee;
+  top: 0;
+  min-height: 75px;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  z-index: 99;
+}
+
+nav > ul {
+  display: flex;
+}
+
+nav > ul > li > a {
+  padding: 8px 16px;
+  margin: 0 0 0 16px;
+  font-weight: 500;
+}
+
+.hero {
+  text-align: center;
+  margin-top: 160px;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 900;
+}
+
+.article-container {
+  max-width: 950px;
+  width: 100%;
+  margin: 64px auto;
+}
+
+.features .flex {
+  display: flex;
+  margin: 64px 0;
+  align-items: center;
+}
+
+.features .flex .icon {
+  margin: 0 32px 0 0;
+}
+
+.features .flex .desc h2 {
+  margin-bottom: 16px;
+}
+
+.howitworks {
+  display: flex;
+  justify-content: center;
+}
+
+.pricing {
+  margin-top: 64px;
+  display: flex;
+  justify-content: center;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: calc(100% / 3);
+  margin: 10px;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+
+.product-container > .bar {
+  background-color: #ddd;
+  padding: 16px 0;
+  width: 100%;
+}
+
+.product-container > a {
+  margin: 16px;
+}
+
+@media screen and (max-width: 520px) {
+  .main-header {
+    flex-direction: column;
+    padding: 16px 0;
+  }
+  nav > ul {
+    margin-top: 16px;
+    flex-direction: column;
+    text-align: center;
+  }
+  nav > ul > li > a {
+    margin-left: 0;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .features .flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .features .flex .icon {
+    margin-right: 0;
+  }
+  .pricing {
+    flex-direction: column;
+    align-items: center;
+  }
+  .product-container {
+    width: 300px;
+  }
+}
